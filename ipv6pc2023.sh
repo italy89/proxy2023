@@ -28,7 +28,7 @@ install_3proxy() {
 gen_3proxy() {
     cat <<EOF
 daemon
-maxconn 2000
+maxconn 1500
 nscache 65536
 timeouts 1 5 30 60 180 1800 15 60
 setgid 65535
@@ -58,7 +58,7 @@ upload_proxy() {
 
 }
 gen_data() {
-    seq 50000 52000 | while read port; do
+    seq 50000 51000 | while read port; do
         echo "usr$(random)/pass$(random)/$IP4/$port/$(gen64 $IP6)"
     done
 }
